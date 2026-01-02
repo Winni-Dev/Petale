@@ -1,0 +1,14 @@
+name: Keep Supabase Awake
+
+on:
+  schedule:
+    - cron: "0 9 * * *"  # Tous les jours à 9h UTC
+  workflow_dispatch:
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Wake up Supabase
+        run: |
+          curl -s -o /dev/null -w "%{http_code}"https://nogyvgarabenygzjdwlg.supabase.co/rest/v1/

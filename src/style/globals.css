@@ -1,0 +1,119 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+  
+  body {
+    @apply antialiased;
+    font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+  }
+}
+
+@layer utilities {
+  .line-clamp-1 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+  }
+  
+  .line-clamp-2 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+  }
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gray-100 dark:bg-gray-800;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-400 dark:bg-gray-600 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-gray-500 dark:bg-gray-500;
+}
+
+@keyframes pulse-slow {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 0.6; }
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 4s ease-in-out infinite;
+}
+
+/* Vines & leaves animations */
+@keyframes vine-sway {
+  0% { transform: rotate(0deg) translateY(0); }
+  25% { transform: rotate(1.2deg) translateY(2px); }
+  50% { transform: rotate(0deg) translateY(0); }
+  75% { transform: rotate(-1.2deg) translateY(1px); }
+  100% { transform: rotate(0deg) translateY(0); }
+}
+
+.animate-vine-sway {
+  transform-origin: top center;
+  animation: vine-sway 7s cubic-bezier(.25,.8,.25,1) infinite;
+}
+
+.animate-vine-sway-reverse {
+  transform-origin: top center;
+  animation: vine-sway 8s cubic-bezier(.25,.8,.25,1) infinite reverse;
+}
+
+@keyframes leaf-float {
+  0% { transform: translateY(0) rotate(0deg) scale(1); opacity: 0.95; }
+  50% { transform: translateY(-6px) rotate(-3deg) scale(1.02); opacity: 1; }
+  100% { transform: translateY(0) rotate(0deg) scale(1); opacity: 0.95; }
+}
+
+.animate-leaf-float {
+  transform-origin: center;
+  animation: leaf-float 4.5s ease-in-out infinite;
+}
+
+@keyframes leaf-float-small {
+  0% { transform: translateY(0) rotate(0deg) scale(1); }
+  50% { transform: translateY(-3px) rotate(2deg) scale(1.01); }
+  100% { transform: translateY(0) rotate(0deg) scale(1); }
+}
+
+.animate-leaf-float-small {
+  transform-origin: center;
+  animation: leaf-float-small 5.2s ease-in-out infinite;
+}
+
+.stroke-vine {
+  stroke: #7B4B09;
+}
+
+.fill-leaf {
+  fill: #85841F;
+}
+
+.fill-leafLight {
+  fill: #9FA24A;
+}
