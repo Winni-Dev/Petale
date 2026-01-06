@@ -276,7 +276,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, viewMode = 'g
               {product.price.toLocaleString()} FCFA
             </div>
             {/* Livraison incluse - visible sur mobile avec texte petit */}
-            <div className="text-[10px] sm:text-xs text-gray-500">Livraison incluse</div>
+            <div className="text-[10px] sm:text-xs text-gray-500">commander maintenant</div>
           </div>
           
           <Button
