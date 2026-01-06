@@ -323,7 +323,7 @@ export const ProductModal: React.FC<ProductModalProps> = ({ product, isOpen, onC
                       </div>
                       <div className="text-sm text-gray-500 flex items-center gap-2">
                         <Package className="h-4 w-4" />
-                        Livraison incluse
+                       commander maintenant
                       </div>
                     </div>
 
